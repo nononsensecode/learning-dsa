@@ -11,7 +11,7 @@ from .node import Node
 #     return sum
 
 
-def sum_list(ll: Node) -> int:
+def sum_list(ll: Optional[Node]) -> int:
     if ll is None:
         return 0
 
