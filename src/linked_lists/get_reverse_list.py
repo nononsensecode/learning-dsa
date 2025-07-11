@@ -15,14 +15,12 @@ from .node import Node
 #     return prev
 
 
-def reverse_list(n: Node) -> Optional[Node]:
-    return _reverse_list(n, None)
-
-
-def _reverse_list(n: Optional[Node], prev: Optional[Node]) -> Optional[Node]:
+def reverse_list(n: Node, prev: Optional[Node]=None) -> Optional[Node]:
     if n is None:
         return n
 
     next = n.next
     n.next = prev
-    return _reverse_list(next, n)
+    return reverse_list(next, n)
+
+
