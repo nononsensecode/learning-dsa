@@ -1,6 +1,6 @@
 import pytest
 
-from src.linked_lists.node import Node, assert_equal
+from src.linked_lists.node import Node
 from src.linked_lists.zipper_list import zipper_lists
 
 
@@ -149,4 +149,4 @@ def param3_zipper() -> Node:
     ],
 )
 def test_zipper_list(heads: tuple[Node, Node], expected: Node):
-    assert assert_equal(zipper_lists(head_1=heads[0], head_2=heads[1]), expected)
+    assert zipper_lists(head_1=heads[0], head_2=heads[1]) == expected

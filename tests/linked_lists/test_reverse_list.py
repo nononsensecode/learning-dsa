@@ -3,7 +3,7 @@ from typing import Optional
 import pytest
 
 from src.linked_lists.get_reverse_list import reverse_list
-from src.linked_lists.node import Node, assert_equal
+from src.linked_lists.node import Node
 
 
 def param1() -> Node:
@@ -64,4 +64,4 @@ def param3() -> Node:
     [(param1(), param1_reverse()), (param2(), param2_reverse()), (param3(), param3())],
 )
 def test_reverse_list(node: Node, expected: Node):
-    assert assert_equal(reverse_list(node), expected)
+    assert reverse_list(node) == expected

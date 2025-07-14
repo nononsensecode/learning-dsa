@@ -1,7 +1,7 @@
 import pytest
 
 from src.linked_lists.merge_lists import merge_lists
-from src.linked_lists.node import Node, assert_equal
+from src.linked_lists.node import Node
 
 
 def param_0() -> tuple[Node, Node]:
