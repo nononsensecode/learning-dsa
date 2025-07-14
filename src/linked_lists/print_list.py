@@ -1,4 +1,4 @@
-from node import Node
+from .node import Node
 
 
 def print_list(n: Node) -> None:
@@ -11,7 +11,7 @@ def print_list(n: Node) -> None:
 
 def print_list_by_loop(n: Node) -> None:
     current = n
-    while current.next is not None:
+    while current is not None:
         print(current.val)
         current = current.next
 
