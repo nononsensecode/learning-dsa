@@ -1,7 +1,6 @@
 from typing import Optional
 
 from .node import Node
-from .print_list import print_list_by_loop
 
 # def remove_node(head: Node, target_val: str) -> Node:
 #     current = head
@@ -34,12 +33,3 @@ def remove_node(head: Node, target_val: str, prev: Optional[Node] = None) -> Nod
 
 # Time complexity: O(n)
 # Space complexity: O(1) if we use looped solution. If we use recursive solution, O(n)
-
-
-def param_0() -> Node:
-    return Node("t")
-
-
-if __name__ == "__main__":
-    result = remove_node(param_0(), "t")
-    print_list_by_loop(result)
