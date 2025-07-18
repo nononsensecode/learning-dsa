@@ -48,7 +48,22 @@ We have two extreme situations
 - Worst case scenario: A linked list where the number of nodes equal to the height of the tree.
   i.e, n = h  
 
-So we need to take the worst situation when calculating time and space complexity
+ So we need to take the worst situation when calculating time and space complexity. The spread/unpack
+ is not a free operation. It must iterate through every element in the `left_values` and `right_values`
+ to copy them in to the new list being created.
+
+ - consider a tree where each node has only a left child.
+ - The call for the root (with `n` nodes) must copy the `n-1` values from its child's list
+ - Its child (with `n-1` nodes) must copy the `n-2` values from its child's list
+ - ...and so on.
+
+ The total work is the sum of these copy operations:
+ 
+ T(n) = approx(n-1) + (n-2) + (n-3)+....+1
+ 
+ This is an arithmetic series that sums to:
+
+ n/(n-1)^2 which give a time complexity of O(n^2)
 
 ### Space complexity
 
@@ -62,19 +77,33 @@ So we need to take the worst situation when calculating time and space complexit
 - In the case of looped solution, we are looping through each node, then the time complexity
   is O(n)
 - In the case of recursive solution, 
+
+We can reduce the time and space complexity in the case of recursive type solution by introducting
+an array
 """
+
+
+def depth_first_values_recursive_improved(
+    root: Optional[Node], result: List[str] = []
+) -> list[str]:
+    if root is None:
+        return []
+
+    result.append(root.val)
+    depth_first_values_recursive_improved(root.left, result)
+    depth_first_values_recursive_improved(root.right, result)
+    return result
+
+
+#        a
+#       / \
+#      b   c
+#     / \   \
+#    d   e   f
 
 
 """
 Recursive
-             a
-            / \
-            b  c
-           / \  \
-          d   e  f
-
-
-
 1. check if root i.e 'a' is None as it is not None:
 2. left_values = depth_first_values(a.b)
 3. right_values = depth_first_values(a.c)

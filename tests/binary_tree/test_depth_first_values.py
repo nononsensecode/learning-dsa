@@ -2,7 +2,11 @@ from typing import List, Optional, Tuple
 
 import pytest
 
-from src.binary_tree.depth_first_values import depth_first_values, depth_first_values_recursive
+from src.binary_tree.depth_first_values import (
+    depth_first_values,
+    depth_first_values_recursive,
+    depth_first_values_recursive_improved,
+)
 from src.binary_tree.node import Node
 
 
@@ -65,3 +69,4 @@ def param_4() -> Tuple[Optional[Node], List[str]]:
 def test_depth_first_values(params: Tuple[Optional[Node], List[str]]):
     assert depth_first_values(params[0]) == params[1]
     assert depth_first_values_recursive(params[0]) == params[1]
+    assert depth_first_values_recursive_improved(params[0], []) == params[1]
