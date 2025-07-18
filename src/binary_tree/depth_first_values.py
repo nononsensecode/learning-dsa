@@ -33,8 +33,36 @@ def depth_first_values_recursive(root: Optional[Node]) -> List[str]:
     return [root.val, *left_values, *right_values]
 
 
-# Time complexity: O(n)
-# Space complexity: O(n) as we are adding the values to the list
+"""
+We have two extreme situations
+
+- Best case scenario: A balanced tree, where both legs of the root is balanced. In that case,
+  the relation between the number of nodes (n) and height (h) of the binary tree is:
+
+  n = 2^(h+1) -1
+  
+  Which can be written also as: 
+
+  h = log_2(n+1)-1
+
+- Worst case scenario: A linked list where the number of nodes equal to the height of the tree.
+  i.e, n = h  
+
+So we need to take the worst situation when calculating time and space complexity
+
+### Space complexity
+
+- In the case of looped solution, we creating a list which is equal to the number
+  of nodes. So the space complexity is O(n)
+- In the case of recursive solution, we are creating a list also there is function stack which is
+  equal to the height(h) of the tree. So the space complexity is actually O(h+n). But we
+  know that h<=n, so we can avoid the lesser variable, then the space complexity becomes: O(n)
+
+### Time complexity
+- In the case of looped solution, we are looping through each node, then the time complexity
+  is O(n)
+- In the case of recursive solution, 
+"""
 
 
 """
