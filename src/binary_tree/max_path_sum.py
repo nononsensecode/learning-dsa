@@ -1,6 +1,6 @@
 from typing import Optional
 
-from .node import Node
+from src.binary_tree.node import Node
 
 
 def max_path_sum(root: Optional[Node]) -> float:
@@ -14,7 +14,6 @@ def max_path_sum(root: Optional[Node]) -> float:
     return root.val + max(max_path_sum(root.left), max_path_sum(root.right))
 
 
-#       3
 #    /    \
 #   11     4
 #  / \      \
@@ -49,3 +48,6 @@ def max_path_sum(root: Optional[Node]) -> float:
 27. 3 + max(15, 5) = 3 + 15 = 18
 
 """
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
