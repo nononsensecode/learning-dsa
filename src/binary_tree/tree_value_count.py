@@ -12,3 +12,7 @@ def tree_value_count(root: Optional[Node], target: str) -> int:
 
     count = 1 if root.val == target else 0
     return count + left_count + right_count
+
+
+# Time complexity: O(n)
+# Space complexity: O(n)
