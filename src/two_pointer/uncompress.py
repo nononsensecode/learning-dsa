@@ -25,6 +25,19 @@ def uncompress_two_pointer(s: str) -> str:
 
     return "".join(result)
 
+def uncompress_recursive(s: str, uncompressed: str = "", num: str = "") -> str:
+    if s == "":
+        return uncompressed
+    
+    if s[0].isnumeric():
+        num += s[0]
+    else:
+        uncompressed += s[0] * int(num)
+        num = ""
+
+    return uncompress_recursive(s[1:], uncompressed, num)
+
+
 # Number of letters: n
 # Max number found: m
 # Time complexity: O(n*m)

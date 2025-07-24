@@ -1,4 +1,4 @@
-from src.two_pointer.uncompress import uncompress, uncompress_two_pointer
+from src.two_pointer.uncompress import uncompress, uncompress_two_pointer, uncompress_recursive
 import pytest
 
 
@@ -18,3 +18,4 @@ import pytest
 def test_uncompress(s: str, expected: str):
     assert uncompress(s) == expected
     assert uncompress_two_pointer(s) == expected
+    assert uncompress_recursive(s) == expected
