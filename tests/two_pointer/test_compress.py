@@ -1,6 +1,6 @@
 import pytest
 
-from src.two_pointer.compress import compress, compress_two_pointer
+from src.two_pointer.compress import compress, compress_two_pointer, compress_recursive
 
 
 @pytest.mark.parametrize(
@@ -19,3 +19,4 @@ from src.two_pointer.compress import compress, compress_two_pointer
 def test_compress(s: str, expected: str):
     assert compress(s) == expected
     assert compress_two_pointer(s) == expected
+    assert compress_recursive(s) == expected
