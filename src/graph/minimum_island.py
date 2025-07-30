@@ -21,8 +21,8 @@ def _explore(
     visited: Set[Tuple[int, int]],
 ) -> int:
     row_inbound = 0 <= row_index < len(grid)
-    col_inboud = 0 <= col_index < len(grid[0])
-    if not row_inbound or not col_inboud:
+    col_inbound = 0 <= col_index < len(grid[0])
+    if not row_inbound or not col_inbound:
         return 0
 
     if grid[row_index][col_index] == "W":
