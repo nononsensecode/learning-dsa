@@ -47,3 +47,11 @@ def _traverse(graph: Dict[int, List[int]], node: int, distances: Dict[int, int])
 
     distances[node] = 1 + longest_distance
     return distances[node]
+
+# number of pre-requisites is "p"
+# number of courses is "c"
+# worst case is a single long graph such "a->b->c->d".
+# Then the time complexity for recursive operation is O(p)
+# we creates the graph, for that time complexity is O(c)
+# so total time complexity is O(c+p)
+# Space complexity is also O(c+p)
